@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,100&display=swap');
 @import 'null';
-@import 'variables';
+@import './_variables.scss';
 
 @-webkit-keyframes cart {
     0% {
@@ -757,7 +757,7 @@
         cursor: pointer;
 
         &:hover {
-            background-color: $pageColor - #111;
+            background-color: calc($pageColor - #111);
         }
     }
 

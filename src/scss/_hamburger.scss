@@ -42,7 +42,7 @@
         margin-bottom: 12px;
 
         &:hover {
-            color: $pageColor - #111111;
+            color: calc($pageColor - #111111);
         }
     }
 

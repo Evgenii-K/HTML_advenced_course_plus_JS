@@ -10,13 +10,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: [
-                    { loader: 'style-loader' },
-                    { loader: 'css-loader' },
-                ]
-            },
-            {
                 test: /\.js$/,
                 use: {
                     loader: 'babel-loader',
@@ -27,12 +20,28 @@ module.exports = {
                 }
             },
             {
-                test: /\.s[ac]ss$/,
+                test: /\.css$/,
                 use: [
                     { loader: 'style-loader' },
                     { loader: 'css-loader' },
-                    { loader: 'scss-loader' },
                 ]
+            },
+            {
+                test: /\.s[ac]ss$/,
+                use: [
+                    // Creates `style` nodes from JS strings
+                    "style-loader",
+                    // Translates CSS into CommonJS
+                    "css-loader",
+                    // Compiles Sass to CSS
+                    "sass-loader",
+                ]
+            },
+            {
+                test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+                use: [
+                    { loader: 'url-loader?limit=100000'},
+                ],
             },
         ]
     }

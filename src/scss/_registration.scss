@@ -50,7 +50,7 @@
         transition: .15s linear;
 
         &:hover {
-            background-color: $pageColor - #111;
+            background-color: calc($pageColor - #111);
         }
 
         &::after {
